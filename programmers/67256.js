@@ -6,25 +6,68 @@
  */
 
 
-console.log(solution([1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5], "right"));
+// D -> distance
+const arr = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    ['*', 0, '#']
+];
+
+console.log(solution([2,5,8,0], "right"));
+
+function getDistance(v1, v2) {
+    var v1ToD = [];
+    var v2ToD = [];
+
+    arr.forEach(function (v, i) {
+        if (arr[i].includes(v1) === true) {
+            v1ToD = [i, arr[i].indexOf(v1)];
+        }
+        if (arr[i].includes(v2) === true) {
+            v2ToD = [i, arr[i].indexOf(v2)];
+        }
+    });
+console.log(v1ToD,v2ToD)
+    return Math.abs((v1ToD[0] - v2ToD[0])) + Math.abs((v1ToD[1] - v2ToD[1]));
+}
 
 function solution(numbers, hand) {
     var answers = [];
     var lefts = [1, 4, 7];
     var rights = [3, 6, 9];
-    var temp = 0;
+    var leftFinger = '#';
+    var rightFinger = '*';
 
     numbers.forEach(function (val) {
         if (lefts.includes(val) === true) {
             answers.push('L');
+            leftFinger = val;
         } else if (rights.includes(val) === true) {
             answers.push('R');
+            rightFinger = val;
         } else {
-// 두 엄지손가락의 현재 키패드의 위치에서 더 가까운 엄지손가락을 사용합니다.
-//4-1. 만약 두 엄지손가락의 거리가 같다면, 오른손잡이는 오른손 엄지손가락, 왼손잡이는 왼손 엄지손가락을 사용합니다.
+            console.log('ss', leftFinger, rightFinger);
+            var leftToD = getDistance(leftFinger, val);
+            var rightToD = getDistance(rightFinger, val);
+            if (leftToD < rightToD) {
+                answers.push('L');
+                leftFinger = val;
+            } else if (leftToD > rightToD) {
+                answers.push('R');
+                rightFinger = val;
+            } else if (hand === 'right') {
+                answers.push('R');
+                rightFinger = val;
+            } else {
+                answers.push('L');
+                leftFinger = val;
+            }
         }
-        temp = val;
+        console.log(answers, val, leftToD, rightToD)
     });
 
     return answers.join('');
 }
+
+//LRLLLRLLRRL
