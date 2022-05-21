@@ -1,7 +1,7 @@
 /**
  * JsStudy
  *
- * @author shjang02 < shjang02@simplexi.com >
+ * https://programmers.co.kr/learn/courses/30/lessons/42576
  * @since 2022. 05. 21.
  */
 console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));

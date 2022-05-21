@@ -2,7 +2,7 @@
  * JsStudy
  * solved
  *
- * @author shjang02 < shjang02@simplexi.com >
+ * https://programmers.co.kr/learn/courses/30/lessons/77484
  * @since 2022. 05. 19.
  */
 function solution(lottos,win_nums) {

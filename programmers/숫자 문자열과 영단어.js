@@ -1,7 +1,7 @@
 /**
  * JsStudy
  *
- * @author shjang02 < shjang02@simplexi.com >
+ * https://programmers.co.kr/learn/courses/30/lessons/81301
  * @since 2022. 05. 17.
  */
 
