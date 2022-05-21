@@ -4,21 +4,17 @@
  * @author shjang02 < shjang02@simplexi.com >
  * @since 2022. 05. 21.
  */
-console.log(solution(["mislav", "stanko", "mislav", "ana"], ["stanko", "ana", "mislav"]));
+console.log(solution(["leo", "kiki", "eden"], ["eden", "kiki"]));
 
 function solution(participant, completion) {
-    var answer = [];
-    let completions = new Map(completion.map(x => [x, 0]));
+    participant.sort();
+    completion.sort();
 
-    participant.map(x => {
-        console.log(x,completions);
-
-        if (completions.has(x) === true) {
-            completions.delete(x);
-        } else {
-            answer.push(x);
+    for (var i in completion) {
+        if (participant[i] !== completion[i]) {
+            return participant[i];
         }
-    });
+    }
 
-    return answer.join('');
+    return participant.pop();
 }
