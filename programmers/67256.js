@@ -1,11 +1,10 @@
 /**
  * JsStudy
+ * solved
  *
  * @author shjang02 < shjang02@simplexi.com >
  * @since 2022. 05. 19.
  */
-
-
 // D -> distance
 const arr = [
     [1, 2, 3],
