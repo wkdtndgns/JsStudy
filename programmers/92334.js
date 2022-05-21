@@ -1,8 +1,9 @@
 /**
- * baekJoon
+ * JsStudy
+ * solved
  *
  * @author shjang02 < shjang02@simplexi.com >
- * @since 2022. 05. 13.
+ * @since 2022. 05. 19.
  */
 function solution(id_list, report, k) {
     var aStopId = [];
